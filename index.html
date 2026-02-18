@@ -10,63 +10,57 @@
       max-width: 980px;
       margin: 0 auto;
       padding: 20px;
+      padding-top: 100px;  /* ← This prevents nav from covering photo/content. Adjust if your nav height changes */
       line-height: 1.65;
       color: #2c3e50;
       background: #f8f9fa;
     }
 
-    /* Fixed Navigation Bar */
+    /* Fixed Navigation Bar – no brand/name on left */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
       z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      padding: 12px 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      padding: 14px 0;
     }
     .nav-container {
       max-width: 980px;
       margin: 0 auto;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: center;  /* Center the menu */
       padding: 0 20px;
-    }
-    .nav-brand {
-      font-weight: 700;
-      font-size: 1.35em;
-      color: #1e40af;
     }
     .nav-menu {
       display: flex;
-      gap: 25px;
+      gap: 24px;
       list-style: none;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .nav-menu a {
       color: #334155;
       text-decoration: none;
       font-weight: 500;
+      font-size: 1.05em;
       transition: color 0.3s;
     }
     .nav-menu a:hover {
       color: #1e40af;
     }
-    .nav-menu a.active {
-      color: #1e40af;
-      font-weight: 600;
-    }
 
-    /* Rest of your existing styles */
+    /* Rest of styles */
     h1 {
       color: #1e3a8a;
       text-align: center;
-      margin: 100px 0 5px;
-      font-size: 2.4em;
+      margin: 30px 0 5px;
+      font-size: 2.6em;
     }
     h2 {
       color: #1e40af;
@@ -76,7 +70,7 @@
     }
     .subtitle {
       text-align: center;
-      font-size: 1.35em;
+      font-size: 1.4em;
       color: #475569;
       margin-bottom: 25px;
     }
@@ -90,12 +84,12 @@
     }
     .contact-bar a { color: #1e40af; }
     img.photo {
-      max-width: 210px;
+      max-width: 220px;
       border-radius: 50%;
       display: block;
-      margin: 20px auto 30px;
-      border: 5px solid #dbeafe;
-      box-shadow: 0 10px 20px rgba(30, 64, 175, 0.1);
+      margin: 0 auto 35px;
+      border: 6px solid #dbeafe;
+      box-shadow: 0 12px 24px rgba(30, 64, 175, 0.12);
     }
     hr {
       border: 0;
@@ -126,18 +120,18 @@
       font-size: 0.95em;
     }
     @media (max-width: 768px) {
-      .nav-menu { gap: 15px; font-size: 0.95em; }
-      img.photo { max-width: 160px; }
-      h1 { margin-top: 80px; }
+      .nav-menu { gap: 16px; font-size: 0.98em; }
+      img.photo { max-width: 170px; }
+      body { padding-top: 80px; }  /* Slightly less on mobile */
+      h1 { font-size: 2.2em; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION MENU -->
+  <!-- NAVIGATION MENU – centered, no left name -->
   <nav>
     <div class="nav-container">
-      <div class="nav-brand">Kingsley Chika CHUKWU</div>
       <ul class="nav-menu">
         <li><a href="#top">Home</a></li>
         <li><a href="#research">Research</a></li>
@@ -171,7 +165,6 @@
 
   <hr>
 
-  <!-- All your sections remain exactly the same (only added IDs where needed) -->
   <!-- RESEARCH INTERESTS -->
   <h2 id="research">Research Interests</h2>
   <ul>
@@ -181,6 +174,8 @@
   </ul>
 
   <hr>
+
+  <!-- Your other sections remain exactly the same as before – just paste them here -->
 
   <!-- PROFILE SUMMARY -->
   <h2 id="summary">Profile Summary</h2>
@@ -193,129 +188,18 @@
   <table>
     <tr><th>Degree</th><th>Institution</th><th>Year</th><th>CGPA/Grade</th></tr>
     <tr>
-      <td><strong>MSc in Environmental Information Systems</strong><br>
-          Thesis: Spatiotemporal Analysis of Mine-Induced Deformation and Land Cover Change at the Rutongo Tin Mine, Rwanda, Using Integrated InSAR and GIS Techniques<br>
-          Supervisor: Dr. Gasirabo Aboubakar</td>
+      <td><strong>MSc in Environmental Information Systems</strong><br>Thesis: Spatiotemporal Analysis of Mine-Induced Deformation and Land Cover Change at the Rutongo Tin Mine, Rwanda, Using Integrated InSAR and GIS Techniques<br>Supervisor: Dr. Gasirabo Aboubakar</td>
       <td>University of Lay Adventists of Kigali (UNILAK), Rwanda</td>
       <td>2023 – 2025</td>
       <td>First Class (Distinction)<br>81.65%</td>
     </tr>
-    <tr>
-      <td><strong>BSc in Geoinformatics and Surveying</strong><br>
-          Thesis: Remote Sensing Image Quality Analysis Using ImAnalysis Software (MATLAB Integrated)<br>
-          Supervisor: Prof. Dr.-Ing. Francis I. Okeke</td>
-      <td>University of Nigeria, Enugu Campus, Nigeria</td>
-      <td>2017 – 2022</td>
-      <td>4.23/5.0 (89%)<br>Second Class Upper Division</td>
-    </tr>
-    <tr>
-      <td><strong>Diploma in Surveying and Geoinformatics</strong><br>
-          Thesis: Comparative assessment of ALOS elevation data and traditionally acquired elevation data<br>
-          Supervisor: Surv. Dr. Joe I Ibedu</td>
-      <td>Akanu Ibiam Federal Polytechnic Unwana, Nigeria</td>
-      <td>2013 – 2015</td>
-      <td>3.09/4.0 (Upper Credit)</td>
-    </tr>
+    <!-- ... add the other rows as before ... -->
   </table>
 
-  <hr>
+  <!-- Continue with Skills, Experience, Teaching, Publications, Projects, Leadership/Awards, References as in your previous code -->
 
-  <!-- SKILLS -->
-  <h2 id="skills">Professional Skills & Tools</h2>
-  <h3>GIS Platforms</h3>
-  <ul><li>ArcGIS Pro, QGIS, Global Mapper, MapWindows, Diva-GIS, Google Earth Pro, Umap, JOSM</li></ul>
-
-  <h3>Remote Sensing Tools</h3>
-  <ul><li>ERDAS Imagine, ENVI, SNAP (Sentinel Application Platform), ORFEO Toolbox, ILWIS, Metashape Pro, InVEST</li></ul>
-
-  <h3>Cloud & Dashboard Tools</h3>
-  <ul><li>Google Earth Engine, Power BI, Looker Studio, PostgreSQL</li></ul>
-
-  <h3>Surveying & Field Tools</h3>
-  <ul><li>Total Station, GNSS Receivers, Level Instruments, UAVs (Drones), Kobo Collect, Survey123, Field Maps</li></ul>
-
-  <h3>Programming & Others</h3>
-  <ul><li>Python, JavaScript, SQL, MATLAB, R • Drone Mapping • IT Troubleshooting</li></ul>
-
-  <hr>
-
-  <!-- PROFESSIONAL EXPERIENCE -->
-  <h2 id="experience">Professional Experience</h2>
-
-  <h3>Geospatial Data Intern (Hybrid) – TomTom Inc., USA</h3>
-  <p><strong>July 2025 – Present</strong></p>
-  <ul>
-    <li>Developed Power BI Dashboard for Africa & Middle East OSM Activity & Quality monitoring</li>
-    <li>Created new QC workflows using Osmose, KeepRight, OSM Inspector</li>
-    <li>Lead mapping projects via HOT Tasking Manager & MapRoulette</li>
-  </ul>
-
-  <h3>Project Manager (Volunteering) – EcoMappers / OpenStreetMap Rwanda</h3>
-  <p><strong>Nov 2022 – Present</strong></p>
-  <ul>
-    <li>Manage community mapping projects and train 100+ volunteers</li>
-    <li>Develop geospatial dashboards for disaster risk reduction</li>
-  </ul>
-
-  <h3>Geospatial Data Specialist (Part-Time) – Smart Geospatial Media (SGM), Kigali</h3>
-  <p><strong>June 2023 – Present</strong></p>
-  <ul>
-    <li>Lead GIS & remote sensing activities including Rwanda’s 10,800 km MV electrical network mapping</li>
-    <li>Designed internal monitoring dashboards (20% efficiency gain)</li>
-    <li>Train clients on GNSS, Total Station, and GIS</li>
-  </ul>
-
-  <hr>
-
-  <!-- TEACHING & MENTORSHIP -->
-  <h2 id="teaching">Teaching & Mentorship</h2>
-  <ul>
-    <li><strong>Founder & Lead Mentor – Geomatics Planet</strong> (Jun 2018 – Present): Trained 150+ youth in GIS, Remote Sensing, Python & Dashboards</li>
-    <li><strong>GIS & Remote Sensing Trainer</strong> – KICDDA, IRES Institute, TrainingCred (Sep 2023 – Present): Delivered courses to 70+ clients including Eritrea government ministries</li>
-    <li><strong>Trainer – Humanitarian OpenStreetMap Team (HOT)</strong> (Dec 2017 – Present)</li>
-  </ul>
-
-  <hr>
-
-  <!-- PUBLICATIONS -->
-  <h2 id="publications">Publications</h2>
-  <ul>
-    <li>Chukwu, K. C. et al. (2026). Remote Sensing Applications in Wetland Conservation and Management: A Literature Review. <em>East African Journal of Environment and Natural Resources</em>. <a href="https://doi.org/10.37284/eajenr.9.1.4293" class="project-link">DOI</a></li>
-    <li>Chukwu, K. C. et al. (2025). Analyzing the Spatial Distribution of Fuel Stations in Harare, Zimbabwe… <em>Proceedings of OSM Science 2024</em>. <a href="https://doi.org/10.5281/zenodo.17352656" class="project-link">DOI</a></li>
-    <li>Ihemeje, I. E. et al. (2023). GIS And Solid Waste Management in Multi-Campus Universities… <em>Journal of the Nigerian Institute of Town Planners</em>.</li>
-    <li>Hakizimana, B. & Chukwu, K. C. (2023). Towards an intelligent and adapted small scale landslides Monitoring system… <em>International Journal of Science and Engineering Technology</em>.</li>
-  </ul>
-
-  <hr>
-
-  <!-- ONGOING RESEARCH PROJECTS -->
-  <h2 id="projects">Ongoing Research Projects (Google Earth Engine)</h2>
-  <ul>
-    <li>Flood Inundation Mapping – Lokoja, Kogi State, Nigeria → <a href="https://chukwukingsley56.users.earthengine.app/view/kogiflood2022" class="project-link">Live Dashboard</a></li>
-    <li>Deformation Monitoring – Ezu River Environs, Anambra, Nigeria → <a href="https://chukwukingsley56.users.earthengine.app/view/ezu-river-deformation-mornitoring" class="project-link">Live Dashboard</a></li>
-    <li>Land Surface Temperature & Drivers – South Eastern Nigeria → <a href="https://chukwukingsley56.users.earthengine.app/view/south-eastern-project" class="project-link">Live Dashboard</a></li>
-    <li>Arochukwu Rice Monitoring (Sentinel-1 & Sentinel-2) → <a href="https://chukwukingsley56.users.earthengine.app/view/arochukwu-rice-mornitoring-2023" class="project-link">Live Dashboard</a></li>
-    <li>Multi-metric rainfall evaluation & groundwater potential mapping (Enugu)</li>
-  </ul>
-
-  <hr>
-
-  <!-- LEADERSHIP & AWARDS -->
-  <h2 id="leadership">Leadership, Honors & Awards</h2>
-  <ul>
-    <li>TomTom & OSM Africa – Best Africa OSM Highest Contributor Award (Jul 2025)</li>
-    <li>YouthMappers 2024 Highest Mapping Metrics Award</li>
-    <li>IEEE GRSS / AARSE Fellowship Recipient (2022)</li>
-    <li>Global Leadership Fellowship – George Washington University (declined, 2024)</li>
-  </ul>
-
-  <hr>
-
-  <!-- REFERENCES -->
-  <h2 id="references">References</h2>
-  <p>Available upon request (includes Dr. Ojima Isaac Apeh – Hong Kong Polytechnic University, Dr. Emmanuel Udochukwu Onah – UNN/Imperial College, Mr. Bernard Hakizimana – Smart Geospatial Media, and international collaborators).</p>
-
-  <p style="text-align:center; margin-top:60px; color:#64748b; font-size:0.95em;">
+  <!-- At the bottom -->
+  <p style="text-align:center; margin-top:80px; color:#64748b; font-size:0.95em;">
     Last updated: February 2026 •
     <a href="Kingsley Chika CHUKWU Academic CV - 30102025.pdf" style="color:#1e40af;">↓ Download Full PDF CV</a>
   </p>
